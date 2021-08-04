@@ -4,10 +4,10 @@
     --interactive:              #2196F3;/*цвет текста выделения ссылок при фокусе, акцент*/
     --btn-control:              #FFFFFF;/*цвет текста на кнопке при фокусе */
     --btn:                      #212121;/*цвет теста на кнопке в спокойном состоянии*/ 
-    --icon-color                  #757575;
+
     /*Текст*/
-    --primary-color:            #212121;/*основной цвет текста*/
-    --secondary-color:          #757575;/*вторичный цвет текста*/
+    --primary-color:            #757575;/*вторичный цвет текста*/
+    --secondary-color:          #212121;/*основной цвет текста*/
     --text-title:               #FFFFFF;/*цвет текста в герое*/                  
 
     /*Фон*/
@@ -33,6 +33,7 @@ body {
     color: var(--primary-color);
     letter-spacing: 0.06em;
     font-family: Roboto, sans-serif;
+    
 }
 
 .hero,
@@ -70,9 +71,6 @@ ul{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 }
-
-
-
 
 /*Header*/
 .page-hader .nav{
@@ -126,7 +124,6 @@ ul{
 .site-nav{
     display: flex;
 }
-
 .site-nav .main-nav:not(:last-child){
     margin-right: 50px;
 }
@@ -138,7 +135,7 @@ ul{
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -153,7 +150,7 @@ ul{
 
 /*Почта и телефон*/
 .contacts-box .link{
-    color: var(--secondary-color);
+    color: currentColor;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -163,6 +160,10 @@ ul{
     padding-top: 32px;
     padding-bottom: 32px;
     margin: 0;
+}
+.contacts-box .link:hover,
+.contacts-box .link:focus{
+    color: var(--interactive);
 }
 
 .contacts-box{
@@ -177,41 +178,23 @@ ul{
 .page-hader .contacts-box{
     display: block;
     display: flex;
+    justify-content: center;
+
 }
 .page-hader .item{
-    display: block;
     display: flex;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    fill: currentColor;
 }
-.contacts-box .link:focus,
-.contacts-box .link:hover{
-    color: var(--interactive);
-}
-
 .contacts-box .item:not(:last-child){
     margin-right: 30px;
 }
-.icon-btn{
-    fill:#2196F3
-    padding: 0;
-
+.page-hader .icon{
+    margin-right: 10px;   
 }
-.page-hader .icon-contact{
-    /*content: "";
-    display: block;
-    background-size: contain;
-    background-repeat: no-repeat ;
-    background-position: center;*/
-    padding-top: 32px;
-    padding-bottom: 32px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.page-hader .icon:hover,
-.page-hader .icon:focus{
-    fill: var(--interactive);
-}
-
 
 /*Блок герой*/
 .hero{
@@ -223,9 +206,13 @@ ul{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: rgba(47, 48, 58, 0.4);
-    background-image: url(../images/img22.jpg);
+    background-image: linear-gradient(
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/img22.jpg);
 }
+
 .hero .part{
     font-weight: 900;
     font-size: 44px;
@@ -242,7 +229,7 @@ ul{
     padding-left: 32px;
     padding-right: 32px;
     font-family: Roboto;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 1.87;
     min-width: 200px;
@@ -289,25 +276,11 @@ ul{
     background: var(--background-secondary);
     border-radius: 4px;
     margin-bottom: 30px;
-    /*content: "";
-    display: block;
-    background-size: contain;
-    background-repeat: no-repeat ;
-    background-position: center;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.features .icon-features:(:last-child){
-    margin-right: 30px;
-    padding-top: 25px;
-}
-.features .icon{
-    /*content: "";
-    display: block;
-    background-size: contain;
-    background-repeat: no-repeat ;
-    background-position: center;*/
-    margin-left: 100px;
-    margin-top: 25px;
-}
+
 
 .features .item{
     display: flex;
@@ -322,12 +295,12 @@ ul{
     line-height: 1.14;
     text-transform: uppercase;
     margin-bottom: 10px;
+    color: var(--secondary-color);
 }
 
 .features .content{
     font-size: 14px;
     line-height:1.71;    
-    color:var(--secondary-color);
 }
 
 .features .item-list:not(:last-child){
@@ -343,7 +316,7 @@ ul{
     font-size: 36px;
     line-height: 1,17;
     letter-spacing: 0.03em;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     
 }
 .aside .item{
@@ -361,27 +334,19 @@ ul{
 }
 
 /*Блок: - Наша команда*/
+
 .team .list-link{
     display: block;
     height: 44px;
     width: 44px;
-    background-image: url();
-    background-size: 20px;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 50%;
-
-    
+    border-radius: 50%; 
+    cursor: pointer;
 }
 .team .list-link:not(:last-child){
     margin-right: 10px;
 }
-
-/*.team .list-link:hover,
-.team .list-link:focus{
-    background-color: var(--interactive);
-    border-radius: 50%;
-}*/
 
 .team .team-item{
     display: flex;
@@ -403,7 +368,7 @@ ul{
     font-size: 16px;
     line-height: 1.18;
     letter-spacing: 0.03em; 
-    color: var(--primary-color);  
+    color: var(--secondary-color);  
 }
 
 .team .team-part:not(:last-child){
@@ -417,6 +382,7 @@ ul{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
+    color: var(--secondary-color);
 }
 .team .name{
     font-weight: 500;
@@ -430,7 +396,7 @@ ul{
     font-size: 16px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: var(--secondary-color);
+    color: var(--primery-color);
     margin-bottom: 16px;
 }
 .team .social-links{
@@ -453,74 +419,107 @@ ul{
 }
 .team .icon{
     margin-top: 12px;
+    fill: currentColor;
 }
-
-.team .list-link:hover,
-.team .list-link:focus{
-    background: var(--interactive);
-    fill: #FFFFFF;
+   
+.team .link:hover,
+.team .link:focus{
+    background-color: var(--interactive);
+    color: #FFFFFF;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    display: block;
 }
-
-/*<path fill="var(--color1, #afb1b8)"*/
-/*.team .icon:hover,
-.team .icon:focus{
-    fill: #FFFFFF;
-
-}*/
+.team .link{
+    color: currentColor;
+}
 
 /*Постоянные клиенты*/
-.clients{
-    fill:  #afb1b8;
+/*.team .list-link{
+    cursor: pointer;
+    fill: currentColor;
 }
+
+.team .list-link:not(:last-child){
+    margin-right: 10px;
+}
+
+.team-item{
+    color: #afb1b8;
+}
+.team .icon{
+    margin-top: 12px;
+    fill: currentColor;
+}
+   
+.team .link:hover,
+.team .link:focus{
+    background-color: var(--interactive);
+    color: #FFFFFF;
+    border-radius: 50%;
+    height: 44px;
+    width: 44px;
+    display: block;
+}
+.team .link{
+    color: currentColor;
+}*/
+
+
 .clients .title{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     letter-spacing: 0.03em;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     margin-bottom: 50px;
 
 }
 
 .clients .list-clients{
     display: flex;
+    color:  #afb1b8;
 }
 
 .clients .list-client:not(:last-child){
     margin-right: 30px;
 }
-.clients .list-client{
+.clients .link-client{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 170px;
     height: 92px;
     border: 1px solid #AFB1B8;
     box-sizing: border-box;
     border-radius: 4px;
     cursor: pointer;
-    
+    color: currentColor;
 }
-.clients .list-client:hover,
-.clients .list-client:focus{
+.clients .link-client:hover,
+.clients .link-client:focus{
+    color: var(--interactive);
     border: 1px solid var(--interactive);
     box-sizing: border-box;
     border-radius: 4px;
-    fill: var(--interactive);
     
 }
+/*.clients .list-client:hover,
+.clients .list-client:focus{
+    color: var(--interactive);
+    border: 1px solid var(--interactive);
+    box-sizing: border-box;
+    border-radius: 4px;
+}*/
+
 .clients .icon{
-    margin-top: 16px;
-    margin-left: 32px;
+    fill: currentColor;
 }
-/*.clients .icon{
-    fill: #afb1b8;
-
-}*/
-/*.clients .icon:hover,
-.clients .icon:focus{
-    fill: var(--interactive);
-
-}*/
-
-
+.clients .link-client{
+    color: currentColor;
+}
 
 
 /*Подвал*/
@@ -593,16 +592,20 @@ ul{
     margin-right: 10px;
 }
 
-.footer .list-link{
+.footer .link-social{
+    display: block;
     width: 44px;
     height: 44px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
 }
-.footer .list-link:hover,
-.footer .list-link:focus{
+.footer .link-social:hover,
+.footer .link-social:focus{
     background-color:  var(--interactive);  
     border-radius: 50%;
+    width: 44px;
+    height: 44px;
+
 }
 
 .footer  .address-box{
@@ -634,7 +637,7 @@ ul{
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.03em;
-    color: var(--secondary-color);
+    color: var(--primery-color);
     text-align: left;
 }
 .preview .title-list{
@@ -699,7 +702,7 @@ ul{
 }
 
 .item .btn{
-    display: inset-block;
+    display: block;
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 22px;
@@ -708,7 +711,7 @@ ul{
     font-weight: 500;
     font-size: 16px;
     line-height: 1.63;
-    color: var(--btn);
+    /*color: var(--btn);*/
     line-height: 1.87;
     border-radius: 4px;
     background: var(--background-secondary);
